@@ -50,8 +50,32 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
 function openVideo(videoSrc) {
     const modal = document.getElementById("videoModal");
     const video = document.getElementById("modalVideo");
+    const source = document.getElementById("videoSource");
 
-    video.src = videoSrc;
+    source.src = videoSrc;
+    video.load();                 // FORCE reload
     modal.style.display = "flex";
-    video.play();
+
+    // Play only after user interaction (browser-safe)
+    setTimeout(() => {
+        video.play().catch(() => {
+            console.log("Autoplay blocked, user must press play");
+        });
+    }, 300);
 }
+
+function closeVideo(event) {
+    // Prevent modal click conflict
+    if (event) event.stopPropagation();
+
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("modalVideo");
+    const source = document.getElementById("videoSource");
+
+    video.pause();
+    source.src = "";              // RESET SOURCE
+    video.load();
+
+    modal.style.display = "none";
+}
+
