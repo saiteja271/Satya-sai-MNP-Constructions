@@ -44,4 +44,14 @@ window.addEventListener('scroll', () => {
 document.querySelector('.menu-toggle').addEventListener('click', () => {
     // Add logic to toggle mobile navigation menu visibility
     alert('Mobile menu toggle clicked! Implement your mobile navigation here.');
+
 });
+
+function openVideo(videoSrc) {
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("modalVideo");
+
+    video.src = videoSrc;
+    modal.style.display = "flex";
+    video.play();
+}
