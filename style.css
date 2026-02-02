@@ -554,3 +554,25 @@ footer {
     cursor: pointer;
     z-index: 10;
 }
+
+.hero-btns {
+    display: flex;
+    justify-content: center;   /* CENTER horizontally */
+    align-items: center;       /* CENTER vertically */
+    gap: 20px;                 /* Space between buttons */
+    flex-wrap: wrap;           /* Wrap nicely on mobile */
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .hero-btns {
+        flex-direction: column;
+    }
+}
+
+.hero-btns a,
+.hero-btns button {
+    min-width: 220px;
+    text-align: center;
+}
+
