@@ -93,6 +93,18 @@
         </div>
     </section>
 
+ <div class="hero-btns" data-aos="fade-up" data-aos-delay="800">
+    <a href="#services" class="primary-btn">Explore Services <i class="fas fa-arrow-right"></i></a>
+    <a href="#contact" class="secondary-btn"><i class="fas fa-handshake"></i> Get In Touch</a>
+</div>
+<div class="hero-btns" data-aos="fade-up" data-aos-delay="800">
+    <a href="#services" class="primary-btn">Explore Services <i class="fas fa-arrow-right"></i></a>
+    <button class="secondary-btn" onclick="openVideo('video1.mp4')">
+        <i class="fas fa-play"></i> Watch Video 1
+    </button>
+</div>
+
+
     <section id="about" class="about">
         <div class="about-glass" data-aos="flip-up">
             <div class="about-text">
@@ -148,7 +160,18 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
+ <!-- Video Modal -->
+<div id="videoModal" class="video-modal">
+    <div class="video-content">
+        <span class="close-btn" onclick="closeVideo()">&times;</span>
+        <video id="modalVideo" controls autoplay>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
 </body>
 
 </html>
+
 
